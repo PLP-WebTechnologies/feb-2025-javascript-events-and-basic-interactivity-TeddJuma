@@ -1,0 +1,172 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: #f0f2f5;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.gallery-container {
+    position: relative;
+    margin: 20px 0;
+}
+
+#galleryImage {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.tab-content {
+    display: none;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 0 0 8px 8px;
+}
+
+.tab-content.show {
+    display: block;
+    animation: fadeIn 0.3s;
+}
+
+.form-group {
+    margin: 15px 0;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #646cff;
+    outline: none;
+}
+
+.error {
+    color: #ff4444;
+    font-size: 0.9rem;
+    height: 18px;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.rainbow-hover:hover {
+    background-image: linear-gradient(90deg, 
+        #ff6b6b, #ff9e6b, #ffd96b, 
+        #9bff6b, #6bffd9, #6b9bff, 
+        #d96bff, #ff6bd9);
+    background-size: 400% 400%;
+    animation: rainbow 2s ease infinite;
+}
+
+@keyframes rainbow {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background: #fff;
+    margin: 10% auto;
+    padding: 30px 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    text-align: center;
+    position: relative;
+    animation: modalFadeIn 0.4s;
+}
+
+.close {
+    position: absolute;
+    top: 10px; right: 15px;
+    color: #888;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close:hover { 
+    color: #AA3939; 
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Confetti styles */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    pointer-events: none;
+    z-index: 9999;
+    top: -10px;
+}
+
+.emoji-confetti {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    top: -50px;
+    font-size: 24px;
+}
+
+@keyframes fall {
+    to {
+        top: 100vh;
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+@keyframes fall-and-spin {
+    to {
+        top: 100vh;
+        transform: translateY(100vh) rotate(720deg);
+    }
+}
